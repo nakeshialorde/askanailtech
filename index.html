@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/header.css">
+   <!-- <link rel="stylesheet" type="text/css" href="css/header.css">-->
 
   </head>
   <body>
@@ -67,7 +67,7 @@
       <div class="playback" id="user-avi"></div>
     </button>
    -->
-  </div>
+  <!--/</div>
 </div>
               </div>
             </div>
@@ -76,7 +76,108 @@
         </div>
       </div>
     </div>
-    <!--/ HEADER-->
+     HEADER-->
+<html>
+<head>
+   
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<style type="text/css">
+    .jumbotron {
+        padding: 0;
+        margin-bottom: 0;
+        background-color: #F2E17B;
+    }
+  
+    .videoControls {
+        width: 100%;
+        font-size: 30px;
+  }
+  
+  .videoControls span, .videoControls div {
+        display: inline-block;
+        color: #46A96A;
+  }
+  
+  .btnMute, .btnFullscreen {
+        float: right;
+        padding-left: 20px;
+        margin-right: 20px;
+        color: #49DCCF;
+  }
+  
+  .btnPlay {
+      padding-right: 20px;
+      margin-left: 20px;
+      color: #46A96A;
+  }
+  
+  .glyphicon:hover {
+      color: #6E8228;
+  }
+</style>
+<div class="jumbotron">
+    <video width="100%" poster="poster.jpg" id="videoPlayer">
+        <source src="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_60fps_normal.mp4" type=video/mp4>
+        <source src="http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_1080p_stereo.ogg" type=video/ogg>
+       
+    </video>
+    <div class="videoControls">
+        <a href="#" class="btnPlay"><span class="glyphicon glyphicon-play"></span></a>
+        <div class="videoTime">
+            <span class="current"></span>/<span class="duration"></span>
+        </div>
+        <a href="#" class="btnMute"><span class="glyphicon glyphicon-volume-up"></span></a>
+        <a href="#" class="btnFullscreen"><span class="glyphicon glyphicon-fullscreen"></span></a>
+    </div>
+</div>
+
+
+    </div>
+</div>
+<script>
+    $( document ).ready(function() {
+        var videoPlayer = $('#videoPlayer');
+
+        $('.btnPlay').click(function() {
+            if(videoPlayer[0].paused) {
+                videoPlayer[0].play();
+                $('.glyphicon-play').attr('class', 'glyphicon glyphicon-pause');
+            }
+            else {
+                videoPlayer[0].pause();
+                $('.glyphicon-pause').attr('class', 'glyphicon glyphicon-play');
+            }
+            return false;
+        })
+        videoPlayer.on('timeupdate', function() {
+            $('.current').text(Math.round(videoPlayer[0].currentTime));
+        });
+        videoPlayer.on('loadedmetadata', function() {
+            $('.duration').text(Math.round(videoPlayer[0].duration));
+        });
+  
+    $('.btnMute').click(function() {
+            if (videoPlayer[0].muted == false) {
+                videoPlayer[0].muted = true;
+                $('.glyphicon-volume-up').attr('class', 'glyphicon glyphicon-volume-off');
+            } else {
+                videoPlayer[0].muted = false;
+                $('.glyphicon-volume-off').attr('class', 'glyphicon glyphicon-volume-up');
+            }
+        });
+       $('.btnFullscreen').on('click', function() {
+            videoPlayer[0].webkitEnterFullscreen();
+            videoPlayer[0].mozRequestFullScreen();
+            return false;
+        });
+    });
+</script>
+</body>
+</html>
      <!---->
     <section id="service" class="section-padding wow fadeInUp delay-05s">
       <div class="container">
@@ -347,7 +448,7 @@ Or perhaps you are the average nail art loving Jane who wants to Ask A Nail Tech
     <script src="js/wow.js"></script>
     <script src="js/jquery.bxslider.min.js"></script>
     <script src="js/custom.js"></script>
-    <script src="js/header.js"></script>
+    <!--<script src="js/header.js"></script>-->
     <script src="contactform/contactform.js"></script>
     
   </body>
