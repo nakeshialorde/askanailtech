@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Baker Bootstrap Theme</title>
+    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+    
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
+    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+   <!-- <link rel="stylesheet" type="text/css" href="css/header.css">-->
+
+  </head>
+  <body>
+
+    <div class="loader"></div>
+    <div id="myDiv">
+    <!--HEADER-->
+    <div class="header">
+      <div class="bg-color">
+        <header id="main-header">
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#"><img src="img/logo.jpg" alt=""></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <img src="img/logo.jpg"/>
+              <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#main-header">Home</a></li>
+                <li class=""><a href="#feature">About</a></li>
+                <li class=""><a href="#service">Services</a></li>
+                <li class=""><a href="#portfolio">Portfolio</a></li>
+                <li class=""><a href="#testimonial">Testimonial</a></li>
+                <li class=""><a href="#blog">Blog</a></li>
+                <li class=""><a href="#contact">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        </header>
+        
+        <!----  <div class="wrapper">
+        <div class="container">
+          <div class="row">
+          <div class="banner-info text-center wow fadeIn delay-05s">
+        <div class='main'>--->
+ <!-- <div id='media-player' width="100%">
+    <video id='media-video' controls width="100%">
+      <source src='http://upload.wikimedia.org/wikipedia/commons/transcoded/5/5f/Metropolis_II-Chris_Burden-LACMA-720.webm/Metropolis_II-Chris_Burden-LACMA-720.webm.480p.webm' type='video/webm'>
+    </video>
+  </div>-->
+  <!---<div id='media-controls' class='ctrl-box'>
+    <button id='play-pause-button' class='play' title='play' onclick='togglePlayPause();'>
+      <div class="playfront" id="play-disp">
+        <span class="fa fa-play"></span>
+      </div>
+      <div class="playback" id="user-avi"></div>
+    </button>
+   -->
+  <!--/</div>
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+     HEADER-->
+<html>
+<head>
+   
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<style type="text/css">
+    .jumbotron {
+        padding: 0;
+        margin-bottom: 0;
+        background-color: #F2E17B;
+    }
+  
+    .videoControls {
+        width: 100%;
+        font-size: 30px;
+  }
+  
+  .videoControls span, .videoControls div {
+        display: inline-block;
+        color: #46A96A;
+  }
+  
+  .btnMute, .btnFullscreen {
+        float: right;
+        padding-left: 20px;
+        margin-right: 20px;
+        color: #49DCCF;
+  }
+  
+  .btnPlay {
+      padding-right: 20px;
+      margin-left: 20px;
+      color: #46A96A;
+  }
+  
+  .glyphicon:hover {
+      color: #6E8228;
+  }
+</style>
+<div class="jumbotron">
+    <video width="100%" poster="poster.jpg" id="videoPlayer">
+        <source src="http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_60fps_normal.mp4" type=video/mp4>
+        <source src="http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_1080p_stereo.ogg" type=video/ogg>
+       
+    </video>
+    <div class="videoControls">
+        <a href="#" class="btnPlay"><span class="glyphicon glyphicon-play"></span></a>
+        <div class="videoTime">
+            <span class="current"></span>/<span class="duration"></span>
+        </div>
+        <a href="#" class="btnMute"><span class="glyphicon glyphicon-volume-up"></span></a>
+        <a href="#" class="btnFullscreen"><span class="glyphicon glyphicon-fullscreen"></span></a>
+    </div>
+</div>
+
+
+    </div>
+</div>
+<script>
+    $( document ).ready(function() {
+        var videoPlayer = $('#videoPlayer');
+
+        $('.btnPlay').click(function() {
+            if(videoPlayer[0].paused) {
+                videoPlayer[0].play();
+                $('.glyphicon-play').attr('class', 'glyphicon glyphicon-pause');
+            }
+            else {
+                videoPlayer[0].pause();
+                $('.glyphicon-pause').attr('class', 'glyphicon glyphicon-play');
+            }
+            return false;
+        })
+        videoPlayer.on('timeupdate', function() {
+            $('.current').text(Math.round(videoPlayer[0].currentTime));
+        });
+        videoPlayer.on('loadedmetadata', function() {
+            $('.duration').text(Math.round(videoPlayer[0].duration));
+        });
+  
+    $('.btnMute').click(function() {
+            if (videoPlayer[0].muted == false) {
+                videoPlayer[0].muted = true;
+                $('.glyphicon-volume-up').attr('class', 'glyphicon glyphicon-volume-off');
+            } else {
+                videoPlayer[0].muted = false;
+                $('.glyphicon-volume-off').attr('class', 'glyphicon glyphicon-volume-up');
+            }
+        });
+       $('.btnFullscreen').on('click', function() {
+            videoPlayer[0].webkitEnterFullscreen();
+            videoPlayer[0].mozRequestFullScreen();
+            return false;
+        });
+    });
+</script>
+</body>
+</html>
+     <!---->
+    <section id="service" class="section-padding wow fadeInUp delay-05s">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="service-title pad-bt15">About Us</h2>
+            <p class="sub-title pad-bt15">This is the place where you come to ask all questions about nails. Why do my clients nails lift in a week? Why are they complaining about chipped nails just a few days after polishing? And for the love of God, why do my crystals fall off in a day?
+
+Or perhaps you are the average nail art loving Jane who wants to Ask A Nail Tech in training to practice on you. <br>Take a look through our profile pages and see the techs who are listed with us. After you make a selection, go ahead and see if they are free hook you up. Its a win win situation really-you get your nails done at a super economical price while a new nail tech gets to refine her craft.</p>
+            <hr class="bottom-line">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---->
+   
+    <!---->
+   
+    <!---->
+    <section id="service" class="section-padding wow fadeInUp delay-05s">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="service-title pad-bt15">Our Courses</h2>
+            <p class="sub-title pad-bt15">A place for new nail technicians to take online courses,ask questions about the industry, pricing and learn the real business of hands & feet.</p>
+            <hr class="bottom-line">
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="service-item">
+              <h3><span>D</span>esign And Developement</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <a href="">learn more...</a>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="service-item">
+              <h3><span>W</span>ebsite Maintenance</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <a href="">learn more...</a>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="service-item">
+              <h3><span>S</span>eo Optimization</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <a href="">learn more...</a>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="service-item">
+              <h3><span>D</span>igital Marketing</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <a href="">Learn more...</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---->
+        <!---->
+    <section id="feature" class="section-padding wow fadeIn delay-05s">
+      <center> <h2 class="service-title pad-bt15">Pricing</h2> </center>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="wrap-item text-center">
+              <div class="item-img">
+                <img src="img/ser01.png">
+              </div>
+              <h3 class="pad-bt15">Creative Concept</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="wrap-item text-center">
+              <div class="item-img">
+                <img src="img/ser02.png">
+              </div>
+              <h3 class="pad-bt15">Amazing Design</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="wrap-item text-center">
+              <div class="item-img">
+                <img src="img/ser03.png">
+              </div>
+              <h3 class="pad-bt15">Cost effective</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="wrap-item text-center">
+              <div class="item-img">
+                <img src="img/ser04.png">
+              </div>
+              <h3 class="pad-bt15">Secure</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---->
+    <!---->
+    <!---->
+    <section id="portfolio" class="section-padding wow fadeInUp delay-05s">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="service-title pad-bt15">Our Recent Works</h2>
+            <p class="sub-title pad-bt15">At Ask A Nail Tech we have a record of exceptional work and excellent customer service with over several years in the business, we are well equipped and experienced to train you for a career as a nail technician.</p>
+            <hr class="bottom-line">
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+
+              <img src="img/pic01.jpg" class="img-responsive">
+             
+            
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+           
+              <img src="img/pic02.jpg" class="img-responsive">
+              
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+           
+              <img src="img/pic03.jpg" class="img-responsive">
+             
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+            
+              <img src="img/pic04.jpg" class="img-responsive">
+             
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+                <img src="img/pic05.jpg" class="img-responsive">
+            
+          
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+           
+              <img src="img/port06.jpg" class="img-responsive">
+             
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---->
+    <!---->
+    <section id="testimonial" class="wow fadeInUp delay-05s">
+      <div class="bg-testicolor">
+        <div class="container section-padding">
+        <div class="row">
+          <div class="testimonial-item">
+            <ul class="bxslider">
+              <li>
+                <blockquote>
+                  <img src="img/thumb.png" class="img-responsive">
+                  <p>ggghj </p>
+                </blockquote>
+                <small>Shaun Paul, Client</small>
+              </li>
+              <li>
+                <blockquote>
+                  <img src="img/thumb.png" class="img-responsive">
+                  <p>So here is us, on the raggedy edge. Don't push me, and I won't push you. </p>
+                </blockquote>
+                <small>Marry Smith, Client</small>
+              </li>
+              <li>
+                <blockquote>
+                  <img src="img/thumb.png" class="img-responsive">
+                  <p>Come a day there won't be room for naughty men like us to slip about at all. This job goes south, there well may not be another.</p>
+                </blockquote>
+                <small>Vivek Singh, Client</small>
+              </li>
+              <li>
+                <blockquote>
+                  <img src="img/thumb.png" class="img-responsive">
+                  <p>So here is us, on the raggedy edge. Don't push me, and I won't push you.</p>
+                </blockquote>
+                <small>John Doe, Client</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+   
+    <!---->
+    <section id="contact" class="section-padding wow fadeInUp delay-05s">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center white">
+            <h2 class="service-title pad-bt15">Keep in touch with us</h2>
+            <p class="sub-title pad-bt15">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore magna aliqua.</p>
+            <hr class="bottom-line white-bg">
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="loction-info white">
+              <p><i class="fa fa-map-marker fa-fw pull-left fa-2x"></i>A99 Adam Street<br>Texas, TX 555072</p>
+              <p><i class="fa fa-envelope-o fa-fw pull-left fa-2x"></i>info@baker.com</p>
+              <p><i class="fa fa-phone fa-fw pull-left fa-2x"></i>+41 5787 2323</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="contact-form">
+                <div id="sendmessage">Your message has been sent. Thank you!</div>
+                <div id="errormessage"></div>
+                <form action="" method="post" role="form" class="contactForm">
+                    <div class="col-md-6 padding-right-zero">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                            <div class="validation"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                            <div class="validation"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                            <div class="validation"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                            <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                            <div class="validation"></div>
+                        </div>
+                      <button type="submit" class="btn btn-primary btn-submit">SEND NOW</button>
+                    </div>
+                </form>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---->
+    <!---->
+    <footer id="footer">
+      <div class="container">
+        <div class="row text-center">
+          <p>&copy; Baker Theme. All Rights Reserved.</p>
+          <div class="credits">
+            <!-- 
+                All the links in the footer should remain intact. 
+                You can delete the links only if you purchased the pro version.
+                Licensing information: https://bootstrapmade.com/license/
+                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Baker
+            -->
+            Designed  by <a href="https://bootstrapmade.com/">Bootstrap Themes</a>
+        </div>
+        </div>
+      </div>
+    </footer>
+    <!---->
+  </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+    <script src="js/custom.js"></script>
+    <!--<script src="js/header.js"></script>-->
+    <script src="contactform/contactform.js"></script>
+    
+  </body>
+</html>
