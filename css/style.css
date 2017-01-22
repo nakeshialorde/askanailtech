@@ -8,7 +8,7 @@
 body {
 	background-image: url('../img/bg-banner02.jpg');
 	background-position: center center;
-	
+	background-repeat: no repeat; 
 	line-height: 1.4;
 	font-family: 'Roboto', sans-serif;
     color: #67696c;
