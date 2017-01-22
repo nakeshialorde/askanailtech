@@ -6,16 +6,15 @@
 */
 
 body {
-	background-image: url('../img/bg-banner02.jpg');
+	background: url('../img/bg-banner02.jpg') no-repeat fixed;
 	background-position: center center;
-	background-repeat: no repeat; 
 	line-height: 1.4;
 	font-family: 'Roboto', sans-serif;
-    color: #67696c;
-    font-size: 16px;
-    font-weight: 300;
-    letter-spacing: 0.5px;
-    overflow-x: hidden;
+    	color: #67696c;
+    	font-size: 16px;
+    	font-weight: 300;
+    	letter-spacing: 0.5px;
+   	overflow-x: hidden;
 }
 ol, ul {
 	list-style: none;
@@ -93,8 +92,8 @@ HEADER
 ************************************
 ***********************************/
 .header{
-    background: url('../img/bg-banner02.jpg') no-repeat fixed;
-    background-size: cover;
+ /**   background: url('../img/bg-banner02.jpg') no-repeat fixed;
+    background-size: cover;**/
     min-height: 650px;
     position: relative;
 }
