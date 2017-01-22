@@ -6,15 +6,13 @@
 */
 
 body {
-	background: url('../img/bg-banner02.jpg') no-repeat fixed;
-	background-position: center center;
 	line-height: 1.4;
 	font-family: 'Roboto', sans-serif;
-    	color: #67696c;
-    	font-size: 16px;
-    	font-weight: 300;
-    	letter-spacing: 0.5px;
-   	overflow-x: hidden;
+    color: #67696c;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    overflow-x: hidden;
 }
 ol, ul {
 	list-style: none;
@@ -92,8 +90,8 @@ HEADER
 ************************************
 ***********************************/
 .header{
- /**   background: url('../img/bg-banner02.jpg') no-repeat fixed;
-    background-size: cover;**/
+    background: url('../img/bg-banner02.jpg') no-repeat fixed;
+    background-size: cover;
     min-height: 650px;
     position: relative;
 }
@@ -122,10 +120,10 @@ HEADER
     background: rgba(64,75,97, 0.9);
 }
 
-/**.logo-dec
+.logo-dec
 {
     color: #be9e21;
-}**/
+}
 .navbar-default .navbar-brand {
     color: #fff;
     font-family: 'Raleway', sans-serif;
@@ -152,15 +150,15 @@ HEADER
     background: transparent;
     color: #fff;
     -webkit-transition: color 0.2s ease-out;
-   /** transition: color 0.2s ease-out;**/
+    transition: color 0.2s ease-out;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
-   /** color: #be9e21;**/
+    color: #be9e21;
     background-color: transparent;
 }
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
     background-color: transparent;
-  /**  color: #be9e21;**/
+    color: #be9e21;
 }
 .banner-info
 {
@@ -257,7 +255,7 @@ features
     border-top: 0px;
     height: 3px;
     width: 40px;
-    background-color: #fff;
+    background-color: #BE9E21;
 }
 .wrap-item h3 {
     font-size: 24px;
@@ -280,7 +278,7 @@ features
 }
 #service
 {
-    background-color: #fff;
+    background-color: #F3F4F8;
 }
 ul.service-list li i
 {
