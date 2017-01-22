@@ -42,7 +42,8 @@ h1, h2, h3, h4, h5, h6{
 
 .panel
 {
-	background-color: #ff8080;
+	background: rgba (170, 240, 0 , 0.5);
+	/**background-color: #ff8080;**/
 	
 }
 
