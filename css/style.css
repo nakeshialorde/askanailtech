@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5, h6{
 
 .panel
 {
-	background: rgba (170, 240, 0 , 0.5);
+	background: linear-gradient(to bottom, #33ccff 0%, #ffffff 100%);
 	/**background-color: #ff8080;**/
 	
 }
