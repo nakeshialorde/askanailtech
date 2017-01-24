@@ -10,7 +10,7 @@ body {
     background-size: cover;
     line-height: 1.4;
     font-family: 'Roboto', sans-serif;
-    color: #67696c;
+    /*color: #67696c;*/
     font-size: 16px;
     font-weight: 300;
     letter-spacing: 0.5px;
@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6{
 }
 .section-padding
 {
-    padding: 60px 0px;
+    padding: 40px 0px;
 }
 
 .panel
@@ -45,14 +45,6 @@ h1, h2, h3, h4, h5, h6{
 
 }
 
-.panel1
-{
-}
-
-.panel2
-{
-
-}
 #loader {
   position: absolute;
   left: 50%;
@@ -577,7 +569,7 @@ contact
 ***********************************/
 #contact
 {
-    background-color: #fff /*rgb(73, 84, 105)*/;
+    background-color: #ff00ff /*rgb(73, 84, 105)*/;
 }
 .btn-submit, .btn-submit:hover, .btn-submit:focus
 {
