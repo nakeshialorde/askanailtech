@@ -577,7 +577,7 @@ contact
 ***********************************/
 #contact
 {
-    background-color: rgb(73, 84, 105);
+    background-color: #fff /*rgb(73, 84, 105)*/;
 }
 .btn-submit, .btn-submit:hover, .btn-submit:focus
 {
