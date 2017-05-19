@@ -1,141 +1,183 @@
-/* If it jumps from one slide to the next then refresh the page */
-html, body { 
-  margin:0; padding:0;
-  width: 100%; height: 100%;
-  overflow:hidden;    
-  -webkit-perspective: 550px;
-  perspective: 550px;
-}
-.slide {
-  position:absolute;
-  width:100%; height:100%;
-  -webkit-transform-origin: bottom center;
-  transform-origin: bottom center;
-}
-.slide div { position:absolute; width:100%; height:100%; }
-.slide:nth-of-type(1) { -webkit-animation:slideTop 20s 16s ease-out infinite; animation:slideTop 20s 16s ease-in-out infinite; }
-.slide:nth-of-type(2) { -webkit-animation:slideRight 20s 12s ease-out infinite;
-  animation:slideRight 20s 12s ease-in-out infinite; }
-.slide:nth-of-type(3) { -webkit-animation:slideLeft 20s 8s ease-out infinite;
-  animation:slideLeft 20s 8s ease-in-out infinite; }
-.slide:nth-of-type(4) { -webkit-animation:slideBottom 20s 4s ease-out infinite;
-  animation:slideBottom 20s 4s ease-in-out infinite; }
-.slide:nth-of-type(5) { -webkit-animation:slideBottom 20s ease-out infinite;
-  animation:slideBottom 20s ease-in-out infinite; }
-
-@-webkit-keyframes slideBottom {
-  0%,5% { -webkit-transform: rotateX(0); z-index:1; }
-  10% { -webkit-transform: rotateX(90deg); }
-  13% { z-index:1; -webkit-transform: rotateX(90deg) translateY(100%); }
-  50% { z-index:-1; -webkit-transform: rotateX(90deg) translateY(100%); }
-  53%,73% { z-index:-1; -webkit-transform:rotateX(0) translateY(0); }
-}
-
-@keyframes slideBottom {
-  0%,5% { transform: rotateX(0); z-index:1; }
-  10% { transform: rotateX(90deg); }
-  13% { z-index:1; transform: rotateX(90deg) translateY(100%); }
-  50% { z-index:-1; transform: rotateX(90deg) translateY(100%); }
-  53%,80% { z-index:-1; transform:rotateX(0) translateY(0); }
-  81%,100% { z-index:0; }
-}
-/* Alternate directions: Use class or :nth-child to select the correct slide you want to affect,
-                         otherwise it will affect all of them */
-/* .slide { to apply to all */
-/* Left */
-.slide:nth-of-type(3) {
-  -webkit-transform-origin: left center;
-  transform-origin: left center;
-}
-@-webkit-keyframes slideLeft {
-  0%,5% { -webkit-transform: rotateY(0); z-index:1; }
-  10% { -webkit-transform: rotateY(90deg); }
-  13% { z-index:1; -webkit-transform: rotateY(90deg) translateX(-100%); }
-  50% { z-index:-1; -webkit-transform: rotateY(90deg) translateX(-100%); }
-  53%,73% { z-index:-1; -webkit-transform:rotateY(0) translateX(0); }
-}
-@keyframes slideLeft {
-  0%,5% { transform: rotateY(0); z-index:1; }
-  10% { transform: rotateY(90deg); }
-  13% { z-index:1; transform: rotateY(90deg) translateX(-100%); }
-  50% { z-index:-1; transform: rotateY(90deg) translateX(-100%); }
-  53%,80% { z-index:-1; transform:rotateY(0) translateX(0); }
-  81%,100% { z-index:0; }
-}
-/* Right */
-.slide:nth-of-type(2) {
-  -webkit-transform-origin: right center;
-  transform-origin: right center; 
-} 
-@-webkit-keyframes slideRight {
-  0%,5% { -webkit-transform: rotateY(0); z-index:1; }
-  10% { -webkit-transform: rotateY(-90deg); }
-  13% { z-index:1; -webkit-transform: rotateY(-90deg) translateX(100%); }
-  50% { z-index:-1; -webkit-transform: rotateY(-90deg) translateX(100%); }
-  53%,73% { z-index:-1; -webkit-transform:rotateY(0) translateX(0); }
-}
-@keyframes slideRight {
-  0%,5% { transform: rotateY(0); z-index:1; }
-  10% { transform: rotateY(-90deg); }
-  13% { z-index:1; transform: rotateY(-90deg) translateX(100%); }
-  50% { z-index:-1; transform: rotateY(-90deg) translateX(100%); }
-  53%,80% { z-index:-1; transform:rotateY(0) translateX(0); }
-  81%,100% { z-index:0; }
-}
-/* Top */
-.slide:nth-of-type(1) { 
-  -webkit-transform-origin: top center;
-  transform-origin: top center;
-}
-@-webkit-keyframes slideTop {
-  0%,5% { -webkit-transform: rotateX(0); z-index:1; }
-  10% { -webkit-transform: rotateX(-90deg); }
-  13% { z-index:1; -webkit-transform: rotateX(-90deg) translateY(-150%); }
-  50% { z-index:-1; -webkit-transform: rotateX(-90deg) translateY(-150%); }
-  53%,73% { z-index:-1; -webkit-transform:rotateX(0) translateY(0); }
-} 
-@keyframes slideTop {
-  0%,5% { transform: rotateX(0); z-index:1; }
-  10% { transform: rotateX(-90deg); }
-  13% { z-index:1; transform: rotateX(-90deg) translateY(-150%); }
-  50% { z-index:-1; transform: rotateX(-90deg) translateY(-150%); }
-  53%,80% { z-index:-1; transform:rotateX(0) translateY(0); }
-  81%,100% { z-index:0; } 
+// ***************************
+// 
+// Variables
+// 
+// ***************************
+// ***************************
+// Responsive Breakpoints
+// ***************************
+$break-xs: "only screen and (max-width: 320px)";
+$break-sm: "only screen and (max-width: 480px)";
+$break-md: "only screen and (max-width: 768px)";
+$break-lg: "only screen and (max-width: 1024px)";
+$break-xl: "only screen and (min-width: 1025px)";
+// ***************************
+// Colors
+// ***************************
+$text-color:#333;
+$link-color:#444;
+// ***************************
+// 
+// Mixins
+// 
+// ***************************
+// Border radius
+@mixin border-radius($left-top, $right-top, $right-bottom, $left-bottom) {
+  -webkit-border-radius: $left-top $right-top $right-bottom $left-bottom;
+  -moz-border-radius: $left-top $right-top $right-bottom $left-bottom;
+  -ms-border-radius: $left-top $right-top $right-bottom $left-bottom;
+  -o-border-radius: $left-top $right-top $right-bottom $left-bottom;
+  border-radius: $left-top $right-top $right-bottom $left-bottom;
 }
 
-/* End alternate directions */
-
-
-
-
-
-
-/* STYLISTIC THINGS: Photos from http://unsplash.com/ */
-.slide:nth-of-type(1) div {
-  background:#223d65;
-  color:white;
-  text-align:center;
-  padding-top:200px;
-  font-size:16pt; 
-  font-family: "Andale Mono", AndaleMono, monospace;
+// Opacity
+@mixin opacity($o) {
+  filter: alpha(opacity=$o*100);
+  -khtml-opacity: $o;
+  -moz-opacity: $o;
+  opacity: $o;
 }
-.slide:nth-of-type(2) div {
-  background: url("IMG-20170519-WA0002.jpg") center center;
-  background-size:cover;
+
+// Animations
+@mixin transition($property, $duration, $function, $delay:0s) {
+  -webkit-transition: $property $duration $function $delay;
+  -moz-transition: $property $duration $function $delay;
+  -o-transition: $property $duration $function $delay;
+  transition: $property $duration $function $delay;
 }
-.slide:nth-of-type(3) div { 
-  background: rgb(20,20,20);
-  color:white;
-  text-align:center;
-  padding-top:200px;
-  font-size:16pt;
-  font-family:Book Antiqua;
+
+// ***************************
+// 
+// Styles
+// 
+// ***************************
+// ***************************
+// General styles
+// ***************************
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: $text-color;
+  @media #{$break-md} {
+    font-size: 14px;
+  }
+  @media #{$break-sm} {
+    font-size: 12px;
+  }
+  @media #{$break-xs} {
+    font-size: 10px;
+  }
 }
-.slide:nth-of-type(4) div {
-  background: url("IMG-20170519-WA0003.jpg") center center;
-  background-size:cover;
-}
-.slide:nth-of-type(5) div { 
-  background: url("IMG-20170519-WA0004.jpg") center center;
-  background-size:cover; 
+
+// ***************************
+// Reusable elements
+// ***************************
+// Carousel
+.carousel {
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  overflow: hidden;
+  // Maintains the aspect ratio
+  img.spacer {
+    width: 100%;
+  }
+  // Slides
+  .slide {
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    @include opacity(0.0);
+    @include transition(opacity, 0.5s, linear);
+    &.current {
+      @include opacity(1.0);
+    }
+    img.placeholder {
+      width: 100%;
+    }
+    .overlay {
+      margin: 0px;
+      padding: 0px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background: url('https://raw.githubusercontent.com/tessat/responsiveimages/master/spacer.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+  // Arrow, dots
+  .controls {
+    $base-color: #fff;
+    $normal-color: rgba($base-color, 0.6);
+    $active-color: rgba($base-color, 0.9);
+    $disabled-color: rgba($base-color, 0.2);
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    a {
+      text-decoration: none;
+    }
+    .arrow {
+      margin-bottom: 23%;
+      position: absolute;
+      bottom: 0px;
+      font-size: 400%;
+      color: $normal-color;
+      &:hover {
+        color: $active-color;
+      }
+      &.disabled,
+      &.disabled:hover {
+        cursor: default;
+        color: $disabled-color;
+      }
+      &.left {
+        left: 5px;
+        &:before {
+          content: "\25c4";
+        }
+      }
+      &.right {
+        right: 5px;
+        &:before {
+          content: "\25ba";
+        }
+      }
+    }
+    .dots {
+      margin: 0px;
+      padding: 0px;
+      display: inline-block;
+      .dot {
+        $diameter: 15px;
+        background: $normal-color;
+        margin: 0px 8px 5px;
+        padding: 0px;
+        height: $diameter;
+        width: $diameter;
+        display: inline-block;
+        @include border-radius($diameter,
+        $diameter,
+        $diameter,
+        $diameter);
+        &.current,
+        &:hover {
+          background: $active-color;
+        }
+      }
+    }
+  }
 }
