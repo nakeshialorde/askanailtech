@@ -35,172 +35,165 @@
 
 <style>
 * {
-  box-sizing: border-box;
-}
-
-.slider {
-  position: relative;
-  height: 500px;
-  overflow: hidden;
-}
-
-ul {
-  position: relative;
-  list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.pic-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 75%;
+  overflow:hidden;
+}
+
+figure {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-transform: translateX(-33.33333%);
-          transform: translateX(-33.33333%);
+  opacity:0;
+  /*animation*/
+  
+  animation: slideShow 24s linear infinite 0s;
+  -o-animation: slideShow 24s linear infinite 0s; 
+  -moz-animation: slideShow 24s linear infinite 0s;
+  -webkit-animation: slideShow 24s linear infinite 0s;
 }
 
-li {
-  position: relative;
-  width: 33.33333%;
-  height: 100%;
-  color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 300px;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-}
-li:nth-child(1) {
-  background-image: url("../img/IMG-20170519-WA0010.jpg");
-}
-li:nth-child(2) {
-  background-image: url("../img/IMG-20170519-WA0021.jpg");
-}
-li:nth-child(3) {
-  background-image: url("../img/IMG-20170519-WA0019.jpg");
-}
-li:nth-child(4) {
-  background-image: url("../img/IMG-20170519-WA0011.jpg");
-}
-li:nth-child(5) {
-  background-image: url("../img/IMG-20170519-WA0022.jpg");
-}
-li:nth-child(6) {
-  background-image: url("../img/IMG-20170519-WA0026.jpg");
+.pic-1 {
+  opacity: 1;
+  background: url(https://github.com/nakeshialorde/askanailtech/blob/master/img/IMG-20170519-WA0011.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-.slider-nav .prev, .slider-nav .next {
-  position: absolute;
-  background: slategrey;
-  height: 40px;
-  width: 40px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-.slider-nav .prev {
-  left: 0;
-}
-.slider-nav .next {
-  right: 0;
+.pic-2 {
+  animation-delay: 6s;
+  -o-animation-delay: 6s;
+  -moz--animation-delay: 6s;
+  -webkit-animation-delay: 6s;
+  background: url(http://placehold.it/900/42f4b3/fff?text=slide+2) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-.transition {
-  -webkit-transition: -webkit-transform .5s ease;
-  transition: -webkit-transform .5s ease;
-  transition: transform .5s ease;
-  transition: transform .5s ease, -webkit-transform .5s ease;
+.pic-3 {
+  animation-delay: 12s;
+  -o-animation-delay: 12s;
+  -moz--animation-delay: 12s;
+  -webkit-animation-delay: 12s;
+  background: url(http://placehold.it/900/4141f4/fff?text=slide+3) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-.left {
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+.pic-4 {
+  animation-delay: 18s;
+  -o-animation-delay: 18s;
+  -moz--animation-delay: 18s;
+  -webkit-animation-delay: 18s;
+  background: url(http://placehold.it/900/77046a/fff?text=slide+4) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/* keyframes*/
+
+@keyframes slideShow {
+  0% {
+    opacity: 0;
+    transform:scale(1);
+    -ms-transform:scale(1);
+  }
+  4% {
+    opacity: 1
+  }
+  24% {
+    opacity: 1;    
+  }
+  28% {
+    opacity: 0;
+    transform:scale(1.1);
+    -ms-transform:scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform:scale(1);
+    -ms-transformm:scale(1);
+  }    
+ }
+
+@-o-keyframes slideShow {
+   0% {
+    opacity: 0;
+    -o-transform:scale(1);
+  }
+  4% {
+    opacity: 1
+  }
+  24% {
+    opacity: 1;    
+  }
+  28% {
+    opacity: 0;
+    -o-transform:scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    -o-transformm:scale(1);    
+  }
 }
 
-.right {
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+@-moz-keyframes slideShow {
+   0% {
+    opacity: 0;
+    -moz-transform:scale(1);
+  }
+  4% {
+    opacity: 1
+  }
+  24% {
+    opacity: 1;    
+  }
+  28% {
+    opacity: 0;
+    -moz-transform:scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    -moz-transformm:scale(1);    
+  }
+}
+
+@-webkit-keyframes slideShow {
+  0% {
+    opacity: 0;
+    -webkit-transform:scale(1);
+  }
+  4% {
+    opacity: 1
+  }
+  24% {
+    opacity: 1;    
+  }
+  28% {
+    opacity: 0;
+    -webkit-transform:scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transformm:scale(1);    
+  }
 }
 </style>
-	  
-<script>
-function resetPos() {
-  $('.slider ul li').removeClass('transition');
-  $('.slider ul li').removeClass('left right');
-}
-
-//clicks
-$('.prev').on('click', function(){
-  $('.slider ul li').addClass('transition right');
-  
-  setTimeout(function(){
-    prev();
-    resetPos();
-  }, 500);
-});
-
-$('.next').on('click', function(){
-  $('.slider ul li').addClass('transition left');
-  
-  setTimeout(function(){
-    next();
-    resetPos();
-  }, 500);
-});
-
-
-
-///////////////////////////////////////////////////////////////
-function init() {
-  $('.slider ul li').each(function(){
-    var curPos = $(this).index();
-    $(this).css('order', curPos+1);
-  });
-}
-
-function prev() {
-  var slider = $('.slider');
-  var sliderLength = slider.find('ul li').length;
-  $('.slider ul li').each(function(){
-    var curPos = parseInt($(this).css('order'));
-    var sliderLength = slider.find('ul li').length;
-    if (curPos < sliderLength) {
-      $(this).css('order', curPos+1);  
-    }
-    else {
-      curPos = 1;
-      $(this).css('order', curPos);  
-    }
-  });
-}
-
-function next() {
-  var slider = $('.slider');
-  var sliderLength = slider.find('ul li').length;
-  $('.slider ul li').each(function(){
-    var curPos = parseInt($(this).css('order'));
-    var sliderLength = slider.find('ul li').length;
-    if (curPos > 0) {
-      $(this).css('order', curPos-1);  
-    }
-    else {
-      curPos = sliderLength-1;
-      $(this).css('order', curPos);  
-    }
-  });
-}
-
-$(document).ready(function(){
-  init();
-});
-</script>	
-	  
 </head>
 
   <body>
@@ -237,30 +230,13 @@ $(document).ready(function(){
         </nav>
        </header>
 <!------------------------>
-<div class='main'>
-  <div class='slider-container'>
-    <div class='slider'>
-      <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>   3 </li>
-        <li>4
-        </li>
-        <li>
-          5
-        </li>
-        <li>
-          6
-        </li>
-      </ul>
-      <div class='slider-nav'>
-        <div class='prev'></div>
-        <div class='next'></div>
-      </div>
-    </div>
-  </div>
+<div class="pic-wrapper">
+  <figure class="pic-1"></figure>
+  <figure class="pic-2"></figure>
+  <figure class="pic-3"></figure>
+  <figure class="pic-4"></figure>
 </div>
-				<!------------------>
+<!------------------>
     <section id="about" class="section-padding wow fadeInUp delay-05s">
       <div class="wrapper">
       <div class="container">
