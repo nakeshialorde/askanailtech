@@ -1,183 +1,39 @@
-// ***************************
-// 
-// Variables
-// 
-// ***************************
-// ***************************
-// Responsive Breakpoints
-// ***************************
-$break-xs: "only screen and (max-width: 320px)";
-$break-sm: "only screen and (max-width: 480px)";
-$break-md: "only screen and (max-width: 768px)";
-$break-lg: "only screen and (max-width: 1024px)";
-$break-xl: "only screen and (min-width: 1025px)";
-// ***************************
-// Colors
-// ***************************
-$text-color:#333;
-$link-color:#444;
-// ***************************
-// 
-// Mixins
-// 
-// ***************************
-// Border radius
-@mixin border-radius($left-top, $right-top, $right-bottom, $left-bottom) {
-  -webkit-border-radius: $left-top $right-top $right-bottom $left-bottom;
-  -moz-border-radius: $left-top $right-top $right-bottom $left-bottom;
-  -ms-border-radius: $left-top $right-top $right-bottom $left-bottom;
-  -o-border-radius: $left-top $right-top $right-bottom $left-bottom;
-  border-radius: $left-top $right-top $right-bottom $left-bottom;
-}
+/********** SLIDER **********/
+.slider {
+  max-width: 940px;
+  margin: 0px auto 30px auto;}
 
-// Opacity
-@mixin opacity($o) {
-  filter: alpha(opacity=$o*100);
-  -khtml-opacity: $o;
-  -moz-opacity: $o;
-  opacity: $o;
-}
+.slide-viewer {
+    position: relative; /* needed for IE7 */
+    overflow: hidden;
+    height: 430px;}
 
-// Animations
-@mixin transition($property, $duration, $function, $delay:0s) {
-  -webkit-transition: $property $duration $function $delay;
-  -moz-transition: $property $duration $function $delay;
-  -o-transition: $property $duration $function $delay;
-  transition: $property $duration $function $delay;
-}
-
-// ***************************
-// 
-// Styles
-// 
-// ***************************
-// ***************************
-// General styles
-// ***************************
-//******body {
-  margin: 0px;
-  padding: 0px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  color: $text-color;
-  @media #{$break-md} {
-    font-size: 14px;
-  }
-  @media #{$break-sm} {
-    font-size: 12px;
-  }
-  @media #{$break-xs} {
-    font-size: 10px;
-  }
-}*******************//
-
-// ***************************
-// Reusable elements
-// ***************************
-// Carousel
-.carousel {
-  margin: 0px;
-  padding: 0px;
-  position: relative;
-  overflow: hidden;
-  // Maintains the aspect ratio
-  img.spacer {
-    width: 100%;
-  }
-  // Slides
-  .slide {
-    margin: 0px;
-    padding: 0px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
+.slide-group {
     width: 100%;
     height: 100%;
-    @include opacity(0.0);
-    @include transition(opacity, 0.5s, linear);
-    &.current {
-      @include opacity(1.0);
-    }
-    img.placeholder {
-      width: 100%;
-    }
-    .overlay {
-      margin: 0px;
-      padding: 0px;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      width: 100%;
-      height: 100%;
-      background: url('https://raw.githubusercontent.com/tessat/responsiveimages/master/spacer.png');
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-  }
-  // Arrow, dots
-  .controls {
-    $base-color: #fff;
-    $normal-color: rgba($base-color, 0.6);
-    $active-color: rgba($base-color, 0.9);
-    $disabled-color: rgba($base-color, 0.2);
-    margin: 0px;
-    padding: 0px;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
+    position: relative;}
+
+.slide {
     width: 100%;
-    text-align: center;
-    a {
-      text-decoration: none;
-    }
-    .arrow {
-      margin-bottom: 23%;
-      position: absolute;
-      bottom: 0px;
-      font-size: 400%;
-      color: $normal-color;
-      &:hover {
-        color: $active-color;
-      }
-      &.disabled,
-      &.disabled:hover {
-        cursor: default;
-        color: $disabled-color;
-      }
-      &.left {
-        left: 5px;
-        &:before {
-          content: "\25c4";
-        }
-      }
-      &.right {
-        right: 5px;
-        &:before {
-          content: "\25ba";
-        }
-      }
-    }
-    .dots {
-      margin: 0px;
-      padding: 0px;
-      display: inline-block;
-      .dot {
-        $diameter: 15px;
-        background: $normal-color;
-        margin: 0px 8px 5px;
-        padding: 0px;
-        height: $diameter;
-        width: $diameter;
-        display: inline-block;
-        @include border-radius($diameter,
-        $diameter,
-        $diameter,
-        $diameter);
-        &.current,
-        &:hover {
-          background: $active-color;
-        }
-      }
-    }
-  }
-}
+    height: 100%;
+    display: none;
+    position: absolute;}
+
+.slide:first-child {
+    display: block;}
+
+
+/********** BUTTONS **********/
+.slide-buttons {
+  text-align: center;}
+
+.slide-btn {
+  border: none;
+  background: none;
+  color: #000;
+  font-size: 200%;
+  line-height: 0.5em;}
+
+.slide-btn.active, .slide-btn:hover {
+  color: #ed8e6c;
+  cursor: pointer;}
