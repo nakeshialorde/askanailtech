@@ -16,6 +16,12 @@
     <link rel="stylesheet" type="text/css" href="css/slideshow.css">
     <link rel="stylesheet" type="text/css" href="css/slider.css">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	  
+	  
+	  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none;}
+</style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
@@ -70,7 +76,11 @@
         </nav>
        </header>
 <!------------------------>
-
+<div class="w3-content w3-section" style="max-width:500px">
+  <img class="mySlides" src="https://github.com/nakeshialorde/askanailtech/blob/master/img/IMG-20170519-WA0002.jpg" style="width:100%">
+  <img class="mySlides" src="img_ny.jpg" style="width:100%">
+  <img class="mySlides" src="img_chicago.jpg" style="width:100%">
+</div>
 <!------------------>
     <section id="about" class="section-padding wow fadeInUp delay-05s">
       <div class="wrapper">
@@ -319,6 +329,24 @@ Or perhaps you are the average nail art loving Jane who wants to Ask A Nail Tech
     <!--<script src="js/header.js"></script>-->
     <script src="contactform/contactform.js"></script>
 	      <script src="js/sliders.js"></script>
+	    
+	    
+	    <script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
     
   </body>
 </html>
